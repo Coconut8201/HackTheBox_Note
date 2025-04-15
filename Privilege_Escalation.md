@@ -122,7 +122,7 @@ root
 我們還可能使用用戶憑證以該使用者身份通過 ssh 連接到伺服器。
 
 ## SSH Keys  SSH 金鑰
-如果我們對特定使用者的 .ssh 目錄有讀取許可權，我們可以讀取他們在 /home/user/.ssh/id_rsa 或 /root/.ssh/id_rsa 中找到的私有 ssh 密鑰，並使用它來登錄伺服器。如果我們能讀取 /root/.ssh/ 目錄，也能讀取 id_rsa 檔，我們可以把它拷貝到我們的機器上，用 -i 標誌登錄：
+如果我們對特定使用者的 .ssh 目錄有讀取許可權，我們可以讀取他們在 **/home/user/.ssh/id_rsa** 或 **/root/.ssh/id_rsa** 中找到的私有 ssh 密鑰，並使用它來登錄伺服器。如果我們能讀取 /root/.ssh/ 目錄，也能讀取 id_rsa 檔，我們可以把它拷貝到我們的機器上，用 -i 標誌登錄：
 ```
 ssh -i 透過id_rsa 檔案進行login
 ```
