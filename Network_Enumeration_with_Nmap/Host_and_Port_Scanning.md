@@ -105,3 +105,15 @@ Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
 |ttl=56 id=57322 iplen=44 seq=1699105818 win=1024 mss 1460|其他 TCP 標頭參數。|
 
 ### Response 回應
+|message|描述|
+|---|---|
+|RCVD (0.0573s)|指示從目標接收的數據包|
+|TCP|正在使用的協定|
+|10.129.2.28:21 >|表示目標 IPv4 位址和源埠，將用於回復|
+|10.10.14.2:63090|顯示我們的 IPv4 位址和將要回復的埠|
+|RA|發送的 TCP 資料包的 RST 和 ACK 標誌|
+|ttl=64 id=0 iplen=40 seq=0 win=0|其他 TCP 標頭參數|
+
+### Connect Scan 連接掃描
+Nmap 的 TCP 連線掃描（-sT）使用 TCP 三向交握來判斷目標主機上的特定連接埠是開啟還是關閉。掃描時會向目標連接埠發送一個 SYN 封包並等待回應。
+如果目標回應 <u>**SYN-ACK 封包，則該連接埠被視為「開啟」；如果回應的是 RST 封包，則該連接埠被視為「關閉」</u>。**
