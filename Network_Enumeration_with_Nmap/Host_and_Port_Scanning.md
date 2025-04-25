@@ -1,7 +1,7 @@
 # Host and Port Scanning  主機和埠掃描
 ## 快速整理筆記
 <details>
-  <summary>點我展開內容</summary>
+  <summary>展開內容</summary>
   🧠 掃描目標的目的:
   在確認主機存活後，可進一步獲取以下資訊：
   - 開放的連接埠（TCP/UDP）
