@@ -2,14 +2,14 @@
 ## 快速整理筆記
 <details>
   <summary>展開內容</summary>
-  🧠 掃描目標的目的:
+  <h3>🧠 掃描目標的目的:</h3>
   在確認主機存活後，可進一步獲取以下資訊：
   - 開放的連接埠（TCP/UDP）
   - 服務名稱與版本（Service/Version）
   - 作業系統(OS)
   - 服務所提供的資訊（如 Samba Workgroup）
 
-  🔍 埠狀態說明:
+  <h3>🔍 埠狀態說明:</h3>
   |  狀態 | 說明 |
   |---|---|
   |open打開 | 連接已建立，服務可回應|
@@ -19,11 +19,9 @@
   |open打開 | filtered過濾|
   |closed閉 | filtered過濾|
 
-  🚀 常見掃描方法與範例
-  🔧 基礎用法:
-  ```bash
-  sudo nmap <目標IP> [選項(option)]
-  ```
+  <h3>🚀 常見掃描方法與範例</h3>
+  🔧 基礎用法: <br/>
+  <code>sudo nmap <目標IP> [選項(option)]</code>
 
   🔥nmap option:
   | 選項 | 用途 |
