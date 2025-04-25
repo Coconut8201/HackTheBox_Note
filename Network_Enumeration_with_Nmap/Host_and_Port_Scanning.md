@@ -3,6 +3,7 @@
 <details>
   <summary>展開內容</summary>
   <h3>🧠 掃描目標的目的:</h3>
+
   在確認主機存活後，可進一步獲取以下資訊：
   - 開放的連接埠（TCP/UDP）
   - 服務名稱與版本（Service/Version）
@@ -10,14 +11,15 @@
   - 服務所提供的資訊（如 Samba Workgroup）
 
   <h3>🔍 埠狀態說明:</h3>
+
   |  狀態 | 說明 |
   |---|---|
-  |open打開 | 連接已建立，服務可回應|
-  |closed閉 | 目標回傳 RST，表示埠關閉|
-  |filtered過濾 | 未收到回應或 ICMP 錯誤，狀態不明|
-  |unfiltered未過濾 | 僅出現在 ACK 掃描中，表示可達但狀態不明|
-  |open打開 | filtered過濾|
-  |closed閉 | filtered過濾|
+  |open 打開 | 連接已建立，服務可回應|
+  |closed 閉 | 目標回傳 RST，表示埠關閉|
+  |filtered 過濾 | 未收到回應或 ICMP 錯誤，狀態不明|
+  |unfiltered 未過濾 | 僅出現在 ACK 掃描中，表示可達但狀態不明|
+  |open 打開 | filtered過濾|
+  |closed 閉 | filtered過濾|
 
   <h3>🚀 常見掃描方法與範例</h3>
   🔧 基礎用法: <br/>
