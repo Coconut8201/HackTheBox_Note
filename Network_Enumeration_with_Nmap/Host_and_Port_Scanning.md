@@ -2,21 +2,46 @@
 ## 快速整理筆記
 <details>
   <summary>點我展開內容</summary>
-  🧠 掃描目標的目的
+  🧠 掃描目標的目的:
   在確認主機存活後，可進一步獲取以下資訊：
   - 開放的連接埠（TCP/UDP）
   - 服務名稱與版本（Service/Version）
   - 作業系統(OS)
   - 服務所提供的資訊（如 Samba Workgroup）
-  
-|  狀態 | 說明 |
-|---|---|
-|open打開 | 連接已建立，服務可回應|
-|closed閉 | 目標回傳 RST，表示埠關閉|
-|filtered過濾 | 未收到回應或 ICMP 錯誤，狀態不明|
-|unfiltered未過濾 | 僅出現在 ACK 掃描中，表示可達但狀態不明|
-|open打開 | filtered過濾|
-|closed閉 | filtered過濾|
+
+  🔍 埠狀態說明:
+  |  狀態 | 說明 |
+  |---|---|
+  |open打開 | 連接已建立，服務可回應|
+  |closed閉 | 目標回傳 RST，表示埠關閉|
+  |filtered過濾 | 未收到回應或 ICMP 錯誤，狀態不明|
+  |unfiltered未過濾 | 僅出現在 ACK 掃描中，表示可達但狀態不明|
+  |open打開 | filtered過濾|
+  |closed閉 | filtered過濾|
+
+  🚀 常見掃描方法與範例
+  🔧 基礎用法:
+  ```bash
+  sudo nmap <目標IP> [選項(option)]
+  ```
+
+  🔥nmap option:
+  | 選項 | 用途 |
+  |---|---|
+  | -sS | SYN 掃描（半開掃描）[預設，需 root] |
+  | -sT | TCP Connect 掃描（完整 TCP 握手 |
+  | -sU | UDP 掃描 |
+  | -sV | 探測服務版本 |
+  | -O | 辨識作業系統 |
+  | -Pn | 跳過主機存活檢查（不使用 ping）|
+  | -p | 指定連接埠（如 -p 22,80 或 -p 1-65535 |
+  | --top-ports=N | 掃描前 N 個熱門連接埠 |
+  | -F | 快速掃描（前 100 個連接埠） |
+  | --packet-trace | 顯示發送與接收封包 |
+  | --reason | 顯示為何被判定為該狀態 |
+  | -n | 不進行 DNS 解析 |
+  | --disable-arp-ping | 停用 ARP 掃描（適用於本地網路 |
+
 </details>
 
 ## 詳細筆記
