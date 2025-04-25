@@ -30,8 +30,8 @@
 
   ```
   sudo nmap 10.129.2.28 -p- -sV
-sudo nmap 10.129.2.28 -p- -sV --stats-every=5s
-sudo nmap 10.129.2.28 -p- -sV -v
+  sudo nmap 10.129.2.28 -p- -sV --stats-every=5s
+  sudo nmap 10.129.2.28 -p- -sV -v
   ```
 
   <h3>📜 Banner Grabbing（橫幅抓取）</h3>
@@ -61,7 +61,7 @@ sudo nmap 10.129.2.28 -p- -sV -v
 
   ```bash
   nc -nv <IP> 25         # 連線 SMTP
-tcpdump -i eth0 host <本機IP> and <目標IP>
+  tcpdump -i eth0 host <本機IP> and <目標IP>
   ```
 
 </details>
