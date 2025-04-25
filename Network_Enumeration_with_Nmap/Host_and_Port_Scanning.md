@@ -27,7 +27,7 @@
   | 選項 | 用途 |
   |---|---|
   | -sS | SYN 掃描（半開掃描）[預設，需 root] |
-  | -sT | TCP Connect 掃描（完整 TCP 握手 |
+  | -sT | TCP Connect 掃描(完整 TCP 握手) |
   | -sU | UDP 掃描 |
   | -sV | 探測服務版本 |
   | -O | 辨識作業系統 |
@@ -56,7 +56,7 @@
   sudo nmap -sT -p 443 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
   ```
 
-  🌐 UDP 掃描案例
+  <h3>🌐 UDP 掃描案例</h3>
   掃描指定 UDP 埠:
   ```bash
   sudo nmap -sU -p 137 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
@@ -67,20 +67,20 @@
   - ICMP type3/code3 => 代表該UDP port closed
   - 服務僅在應用層主動回應時才有資料返回
 
-  🔍 版本掃描範例
+  <h3>🔍 版本掃描範例</h3>
   檢測開啟埠的服務與版本
   ```bash
   sudo nmap -sV -p 445 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
   ```
 
-  📌 結語
+  <h3>📌 結語</h3>
+
   | 狀況 | 處理建議 |
   |---|---|
   | filtered 狀態 | 多數為防火牆丟棄封包，需多次測試或換掃描方式 |
   | 無回應的 UDP | 改用 -sU --reason 並觀察 ICMP 回應類型 |
   | 需求高準確率時 | 使用 -sT Connect 掃描 |
   | 需隱密偵測 | 使用 -sS SYN 掃描 |
-
 
 </details>
 
