@@ -42,6 +42,48 @@
   | -n | 不進行 DNS 解析 |
   | --disable-arp-ping | 停用 ARP 掃描（適用於本地網路 |
 
+  💡 TCP 掃描案例
+  掃描前 10 熱門 TCP 連接埠:
+  ```bash
+  sudo nmap 10.129.2.28 --top-ports=10
+  ```
+
+  SYN 掃描指定埠位:
+  ```bash
+  sudo nmap -sS -p 80,443 -Pn -n --disable-arp-ping 10.129.2.28
+  ```
+
+  跟蹤封包 + 原因顯示:
+  ```bash
+  sudo nmap -sT -p 443 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
+  ```
+
+  🌐 UDP 掃描案例
+  掃描指定 UDP 埠:
+  ```bash
+  sudo nmap -sU -p 137 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
+  ```
+
+  常見狀況說明:
+  - UDP 無回應 => |filtered
+  - ICMP type3/code3 => 代表該UDP port closed
+  - 服務僅在應用層主動回應時才有資料返回
+
+  🔍 版本掃描範例
+  檢測開啟埠的服務與版本
+  ```bash
+  sudo nmap -sV -p 445 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
+  ```
+
+  📌 結語
+  | 狀況 | 處理建議 |
+  |---|---|
+  | filtered 狀態 | 多數為防火牆丟棄封包，需多次測試或換掃描方式 |
+  | 無回應的 UDP | 改用 -sU --reason 並觀察 ICMP 回應類型 |
+  | 需求高準確率時 | 使用 -sT Connect 掃描 |
+  | 需隱密偵測 | 使用 -sS SYN 掃描 |
+
+
 </details>
 
 ## 詳細筆記
