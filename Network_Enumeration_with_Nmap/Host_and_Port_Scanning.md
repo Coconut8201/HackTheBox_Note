@@ -28,7 +28,7 @@
   🔥nmap option:
   | 選項 | 用途 |
   |---|---|
-  | -sS | SYN 掃描（半開掃描）[預設，需 root] |
+  | -sS | SYN 掃描（半開掃描）[預設，需 root]，掃描前 1000 個 TCP 連接埠|
   | -sT | TCP Connect 掃描(完整 TCP 握手) |
   | -sU | UDP 掃描 |
   | -sV | 探測服務版本 |
@@ -60,6 +60,7 @@
 
   <h3>🌐 UDP 掃描案例</h3>
   掃描指定 UDP 埠:
+  
   ```bash
   sudo nmap -sU -p 137 -Pn -n --disable-arp-ping --packet-trace --reason 10.129.2.28
   ```
